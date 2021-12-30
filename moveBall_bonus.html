@@ -1,0 +1,39 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<script>
+
+var velocityX = 10;
+var velocityY = 8;
+var positionX = 0;
+var positionY = 0;
+var ball = document.getElementById('ball');
+var directionX = 1;
+var directionY = 1;
+
+// YOUR CODE 
+
+function moveBall() {
+  if (positionX > 400 || positionX < 0) {directionX = -directionX
+  ball.style.backgroundColor = "red";
+  };
+  positionX = positionX + directionX * velocityX;
+  ball.style.left = positionX + 'px';
+  if (positionY > 400 || positionY < 0) {directionY = -directionY
+  ball.style.backgroundColor = "green";
+  };
+  positionY = positionY + directionY * velocityY;
+  ball.style.top = positionY + 'px';
+  console.log(positionX,positionY);
+}
+
+setInterval(moveBall, 100);
+
+</script>
